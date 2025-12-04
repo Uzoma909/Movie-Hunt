@@ -46,7 +46,7 @@ const MovieDetails = async ({ params }: Props) => {
         <div className="py-10 flex flex-col lg:flex-row items-center gap-5">
           <div className="w-full lg:w-1/2 min-h-96 rounded-md overflow-hidden group">
             <Image
-              src={getImagePath(details?.backdrop_path)}
+              src={getImagePath(details?.backdrop_path, true)}
               alt={details?.title}
               width={1920}
               height={1080}

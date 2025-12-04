@@ -1,4 +1,3 @@
-
 import CaroselBanner from "@/components/CaroselBanner";
 import MovieContainer from "@/components/MovieContainer";
 import {
@@ -20,20 +19,26 @@ export default async function Home() {
 
     return (
       <main>
-        <CaroselBanner />
-        <div className="flex flex-col space-y-2">
-          {nowPlayingMovies?.length > 0 && (
-            <MovieContainer movies={nowPlayingMovies} title="Now Playing" />
-          )}
-          {upcomingMovies?.length > 0 && (
-            <MovieContainer movies={upcomingMovies} title="Upcoming" />
-          )}
-          {topRatedMovies?.length > 0 && (
-            <MovieContainer movies={topRatedMovies} title="Top Rated" />
-          )}
-          {popularMovies?.length > 0 && (
-            <MovieContainer movies={popularMovies} title="Popular" />
-          )}
+        <div className="relative pt-[1000px]">
+          <div className="absolute top-0 left-0 right-0 z-0">
+            <CaroselBanner />
+          </div>
+          <div className="relative z-20 bg-background">
+            <div className="flex flex-col space-y-2 px-10">
+              {nowPlayingMovies?.length > 0 && (
+                <MovieContainer movies={nowPlayingMovies} title="Now Playing" />
+              )}
+              {upcomingMovies?.length > 0 && (
+                <MovieContainer movies={upcomingMovies} title="Upcoming" />
+              )}
+              {topRatedMovies?.length > 0 && (
+                <MovieContainer movies={topRatedMovies} title="Top Rated" />
+              )}
+              {popularMovies?.length > 0 && (
+                <MovieContainer movies={popularMovies} title="Popular" />
+              )}
+            </div>
+          </div>
         </div>
       </main>
     );
