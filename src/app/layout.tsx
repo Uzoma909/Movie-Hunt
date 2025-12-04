@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Movie Streaming Studio",
+  title: "Movie Hunt",
   description: "An application for your favorite movies",
 };
 
