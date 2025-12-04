@@ -7,7 +7,15 @@ interface Props {
 }
 
 const CaroselBanner = async ({ id, keywords }: Props) => {
-  const movies = await getDiscoverMovies(id, keywords);
+  let movies: any[] = [];
+
+  try {
+    const result = await getDiscoverMovies(id, keywords);
+    movies = result || [];
+  } catch (error) {
+    console.error("Error loading carousel movies:", error);
+    movies = [];
+  }
 
   return <HeroCarousel movies={movies} />;
 };
